@@ -1,11 +1,11 @@
-#ifdef OBJETODEJOGO_HPP
+#ifndef OBJETODEJOGO_HPP
 #define OBJETODEJOGO_HPP
 
+#include <iostream>
 
-#include <string>
 using namespace std;
 
-class ObejetoDeJogo{
+class ObjetoDeJogo {
 
 private:
 	//Atributos
@@ -15,14 +15,14 @@ private:
 public:
 	//Metodos
 	ObjetoDeJogo();
-	ObjetoDeJogo(int posicaoX, int posicaoY, int tipo);
+//	ObjetoDeJogo(int posicaoX, int posicaoY);
 	~ObjetoDeJogo();
 	int getPosicaoX();
 	void setPosicaoX(int posicaoX);
 	int getPosicaoY();
-	void setPosicaoX(int posicaoY);
-	int getTipo();
-	void setTipo(int tipo);
+	void setPosicaoY(int posicaoY);
+        char getTipo();
+        void setTipo(char tipo);
 
 	
 	

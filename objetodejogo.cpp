@@ -1,39 +1,38 @@
 #include "objetodejogo.hpp"
 #include <iostream>
-
 using namespace std;
 
 ObjetoDeJogo::ObjetoDeJogo(){
-	posicaoX = 1;
-	posicaoY = 1;
-	tipo = "";
+        setPosicaoX(1);
+	setPosicaoY(1);
+	setTipo(' ');
 }
 
-ObjetoDeJogo::ObjetoDeJogo(int posicaoX, int posicaoY, int tipo){
+/*ObjetoDeJogo::ObjetoDeJogo(int posicaoX, int posicaoY){
 	setPosicaoX(posicaoX);
 	setPosicaoY(posicaoY);
-	setTipo(tipo);
+	
+}*/
+ObjetoDeJogo::~ObjetoDeJogo(){}
 
+void ObjetoDeJogo::setPosicaoX(int posicaoX){
+        this->posicaoX = posicaoX;
 }
-
-ObjetoDeJogo::~ObjetdoDeJogo(){}
 
 int ObjetoDeJogo::getPosicaoX(){
 	return posicaoX;
 }
-void ObjetoDeJogo::setPosicaoX(){
-	this->posicaoX = posicaoX;
-}
+
+
 int ObjetoDeJogo::getPosicaoY(){
-	return posicaoY;
-}
-void ObjetoDeJogo::setPosicaoY(){
-	this->PosicaoY = PosicaoY;
+	return posicaoY;}
+void ObjetoDeJogo::setPosicaoY(int posicaoY){
+	this->posicaoY = posicaoY;
 }
 char ObjetoDeJogo::getTipo(){
 	return tipo;
 }
-void ObjetoDeJogo::setTipo(tipo){
+void ObjetoDeJogo::setTipo(char tipo){
 	this->tipo = tipo;
 }
 
