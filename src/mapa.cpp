@@ -35,9 +35,13 @@ void Mapa::PrintaMapa(){
                 }
 
 }
+char Mapa::Detectora(int posy, int posx){
+	char sprite;
+	sprite = this->local[posy][posx];
+	return sprite;
+}
 
+void Mapa::addElemento(char forma, int posy, int posx){
 
-void Mapa::addElemento(char forma, int y, int x){
-
-        this->local[y][x] = forma;
+        this->local[posy][posx] = forma;
 }

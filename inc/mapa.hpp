@@ -14,7 +14,8 @@ public:
 	~Mapa();
 	void PrintaMapa();
 	void importaMapa();
-	void addElemento(char forma,int y,int x);
+	char Detectora(int posy, int posx);
+	void addElemento(char forma,int posy,int posx);
 
 };
 

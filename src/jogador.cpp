@@ -6,8 +6,8 @@ using namespace std;
 
 Jogador::Jogador(){
 	setTipo('@');
-	setPosicaoX(2);
-	setPosicaoY(2);
+	setPosicaoX(3);
+	setPosicaoY(3);
 	setVivo(1);
 	setVitoria(0);
 	setPontos(0);
@@ -41,7 +41,7 @@ int Jogador::getPontos(){
 void Jogador::setPontos(int pontos){
 	this->pontos = pontos;
 }
-void Jogador::movimento(){
+/*void Jogador::movimento(){
 
         char direcao = 'l';
 
@@ -57,4 +57,4 @@ void Jogador::movimento(){
                 this->setPosicaoX(1);
         }
 
-}
+}*/

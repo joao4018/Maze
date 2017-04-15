@@ -2,7 +2,9 @@
 #include <iostream>
 
 using namespace std;
-
+Bonus::Bonus(){
+	setTipo('*');
+}
 Bonus::Bonus(int posicaoX, int posicaoY){
 	setPosicaoX(posicaoX);
 	setPosicaoY(posicaoY);

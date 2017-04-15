@@ -3,6 +3,7 @@
 #include "mapa.hpp"
 #include "inimigo.hpp"
 #include "bonus.hpp"
+#include "colisao.hpp"
 #include <cstdlib>
 #include <iostream>
 #include <ncurses.h>
@@ -15,6 +16,7 @@ int main(int argc, char ** argv){
 	Inimigo * inimigos[20];
 	Bonus * bonus[5];
 	int i[20],d[20],c,cont=0,by[5],hx[5];
+	Colisao * colisor = new Colisao();
 
 	for(c = 0;c<20; c++){
 		d[c] = rand() % 19;
@@ -23,21 +25,25 @@ int main(int argc, char ** argv){
 		if(c%4 == 0){
 			by[cont] = rand() % 19;
 			hx[cont] = rand() % 49;
-		  bonus[cont] = new bonus;
+		  bonus[cont] = new Bonus();
 		  cont++;
 	}
 	}
 
-
+//char porra;
 while(1){
 	initscr();
 	lab->addElemento(jogador1->getTipo(),jogador1->getPosicaoY(),jogador1->getPosicaoX());
 	for(c = 0;c < 20; c++){
 		lab->addElemento(inimigos[c]->getTipo(),d[c],i[c]);
 	}
+	for(cont = 0; cont < 5; cont++){
+		lab->addElemento(bonus[cont]->getTipo(),by[cont],hx[cont]);
+	}
   lab->PrintaMapa();
-	jogador1->movimento();
-//	c = getch();
+	colisor->Colisor(jogador1,lab);
+	//porra = getch();
+	//jogador1->movimento();
 	refresh();
 	clear();
   endwin();

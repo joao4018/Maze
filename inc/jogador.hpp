@@ -3,6 +3,7 @@
 
 #include "objetodejogo.hpp"
 #include <iostream>
+
 class Jogador : public ObjetoDeJogo {
 
 private:
@@ -22,6 +23,6 @@ private:
 	int getPontos();
 	void setVitoria(bool vitoria);
 	bool getVitoria();
-	void movimento();
+	//void movimento();
 };
 #endif
