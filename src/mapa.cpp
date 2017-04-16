@@ -44,4 +44,8 @@ char Mapa::Detectora(int posy, int posx){
 void Mapa::addElemento(char forma, int posy, int posx){
 
         this->local[posy][posx] = forma;
+
+}
+void Mapa::Constroi(char forma,int posy, int posx){
+	this->iniciamapa[posy][posx] = forma;
 }

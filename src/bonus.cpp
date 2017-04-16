@@ -8,7 +8,6 @@ Bonus::Bonus(){
 Bonus::Bonus(int posicaoX, int posicaoY){
 	setPosicaoX(posicaoX);
 	setPosicaoY(posicaoY);
-	setPontos(5);
 }
 
 int Bonus::getPontos(){

@@ -9,8 +9,9 @@ Jogador::Jogador(){
 	setPosicaoX(3);
 	setPosicaoY(3);
 	setVivo(1);
-	setVitoria(0);
+	setVitoria(FALSE);
 	setPontos(0);
+	setVidas(3);
 }
 
 Jogador::Jogador(int posicaoX,int posicaoY){
@@ -39,7 +40,13 @@ int Jogador::getPontos(){
 	return pontos;
 }
 void Jogador::setPontos(int pontos){
-	this->pontos = pontos;
+	this->pontos += pontos;
+}
+int Jogador::getVidas(){
+	return vidas;
+}
+void Jogador::setVidas(int vidas){
+	this->vidas += vidas;
 }
 /*void Jogador::movimento(){
 

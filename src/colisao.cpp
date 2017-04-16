@@ -25,22 +25,39 @@ void Colisao::setIdentifica(bool identifica){
   this->identifica = identifica;
 }
 
-void Colisao::Colisor(Jogador *jogador, Mapa *mapa){//, Inimigo *inimigo, Bonus *bonus){
-  char local;
-  local = mapa->Detectora(jogador->getPosicaoY(),jogador->getPosicaoX());
+void Colisao::Colisor(Jogador *jogador, Mapa *mapa){
+  Mapa *local;
+  //local = mapa->Detectora(jogador->getPosicaoY(),jogador->getPosicaoX());
 
-        char direcao = 'l';
+        char direcao;
 
         direcao = getch();
 
-        if(direcao == 'w' && mapa->Detectora(jogador->getPosicaoY()-1,jogador->getPosicaoX()) != '='){
+        if(direcao == 'w' && local->Detectora(jogador->getPosicaoY()-1,jogador->getPosicaoX()) != '='){
                 jogador->setPosicaoY(-1);
-        } else if (direcao == 's' && mapa->Detectora(jogador->getPosicaoY()+1,jogador->getPosicaoX()) != '='){
+        } else if (direcao == 's' && local->Detectora(jogador->getPosicaoY()+1,jogador->getPosicaoX()) != '='){
                 jogador->setPosicaoY(1);
-        } else if (direcao == 'a' && mapa->Detectora(jogador->getPosicaoY(),jogador->getPosicaoX()-1) != '='){
+        } else if (direcao == 'a' && local->Detectora(jogador->getPosicaoY(),jogador->getPosicaoX()-1) != '='){
                 jogador->setPosicaoX(-1);
-        } else if (direcao == 'd' && mapa->Detectora(jogador->getPosicaoY(),jogador->getPosicaoX()+1) != '='){
+        } else if (direcao == 'd' && local->Detectora(jogador->getPosicaoY(),jogador->getPosicaoX()+1) != '='){
                 jogador->setPosicaoX(1);
         }
 
+}
+void Colisao::ColisBon(Jogador *jogador,Mapa *mapa){
+  if(mapa->Detectora(jogador->getPosicaoY(),jogador->getPosicaoX()) == '*' ){
+    jogador->setPontos(+1);
+    mapa->Constroi('-',jogador->getPosicaoY(),jogador->getPosicaoX());
+  }
+  else if(mapa->Detectora(jogador->getPosicaoY(),jogador->getPosicaoX()) == '#' ){
+    jogador->setVidas(-1);
+    mapa->Constroi('-',jogador->getPosicaoY(),jogador->getPosicaoX());
+}
+}
+void Colisao::Fim(Jogador *jogador, Mapa *mapa){
+	char local;
+	local = mapa->Detectora((jogador->getPosicaoY()),(jogador->getPosicaoX()));
+	if(local == '8'){
+		jogador->setVitoria(TRUE);
+	}
 }
