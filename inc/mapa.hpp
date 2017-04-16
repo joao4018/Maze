@@ -14,11 +14,14 @@ class Mapa
 	public:
 		Mapa();
 		~Mapa();
-		void PrintaMapa();
+		char getAux(int posy, int posx);
+		char getMapa(int posy, int posx);
 		void importaMapa();
 		char Detectora(int posy, int posx);
 		void addElemento(char forma,int posy,int posx);
 		void Constroi(char forma,int posy,int posx);
+		void setMapa(char forma,int posy,int posx);
+		void PrintaMapa();
 
 };
 

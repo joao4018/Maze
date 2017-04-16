@@ -23,6 +23,7 @@ Jogador::Jogador(int posicaoX,int posicaoY)
 	setPontos(0);
 	setVitoria(false);
   setTipo('@');
+	setVidas(3);
 }
 
 bool Jogador::getVivo()
@@ -53,6 +54,7 @@ int Jogador::getPontos()
 void Jogador::setPontos(int pontos)
 {
 	this->pontos += pontos;
+
 }
 
 int Jogador::getVidas()
@@ -63,4 +65,5 @@ int Jogador::getVidas()
 void Jogador::setVidas(int vidas)
 {
 	this->vidas += vidas;
+
 }

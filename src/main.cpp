@@ -1,4 +1,5 @@
 #include "objetodejogo.hpp"
+#include "desenhar.hpp"
 #include "jogador.hpp"
 #include "mapa.hpp"
 #include "inimigo.hpp"
@@ -12,6 +13,7 @@ using namespace std;
 int main(int argc, char ** argv){
 	Jogador * jogador1 = new Jogador();
 	Mapa * lab = new Mapa();
+	Desenhar *labi = new Desenhar();
 	lab->importaMapa();
 	Inimigo * inimigos[20];
 	Bonus * bonus[5];
@@ -35,34 +37,21 @@ int main(int argc, char ** argv){
 	for(cont = 0; cont < 5; cont++){
 		lab->Constroi(bonus[cont]->getTipo(),by[cont],hx[cont]);
 	}
-//char porra;
+char porra;
 while(jogador1->getVitoria() != TRUE){
 	initscr();
-
+  clear();
 	lab->addElemento(jogador1->getTipo(),jogador1->getPosicaoY(),jogador1->getPosicaoX());
-if(contador == 0){
-	printw("     INICIE O JOGO EM TELA CHEIA PARA MELHOR EXPERIENCIA\n****************Para comecar precione um comando de movimento****************\n");
-	}
-	lab->PrintaMapa();
-
-
-	printw("Comandos de Movimento:\n");
-	printw("       -----\n");
-	printw("       | W |\n");
-	printw("       -----\n");
-	printw("-----  -----  -----\n");
-	printw("| A |  | S |  | D |\n");
-	printw("-----  -----  -----\n");
-	printw("%d\n%d",jogador1->getVidas(),jogador1->getPontos());
+  lab->PrintaMapa();
+  //labi->PrintaComandos(jogador1);
 	colisor->Colisor(jogador1,lab);
 	colisor->ColisBon(jogador1,lab);
 	colisor->Fim(jogador1,lab);
-  contador++;
-	//porra = getch();
+  contador++;//porra = getch();
 	//jogador1->movimento();
 
 	refresh();
-	clear();
+
   endwin();
 
 }

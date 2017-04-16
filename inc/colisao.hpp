@@ -11,19 +11,23 @@
 #include <string>
 #include <ncurses.h>
 
-class Colisao
-{
 
-  private:
-    bool identifica=TRUE;
 
-	public:
-	  Colisao();
-    bool getIdentifica();
-    void setIdentifica(bool identifica);
-    void Colisor(Jogador *jogador, Mapa *mapa);
-    void ColisBon(Jogador *jogador,Mapa *mapa);
-    void Fim(Jogador *jogador, Mapa *mapa);
+
+class Colisao {
+    private:
+      bool identifica=TRUE;
+
+		public:
+
+			Colisao();
+      bool getIdentifica();
+      void setIdentifica(bool identifica);
+
+      void Colisor(Jogador *jogador, Mapa *mapa);
+      void ColisBon(Jogador *jogador,Mapa *mapa);
+      void Fim(Jogador *jogador, Mapa *mapa);
+
 
 };
 

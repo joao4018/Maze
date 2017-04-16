@@ -10,12 +10,6 @@ ObjetoDeJogo::ObjetoDeJogo()
 	setTipo(' ');
 }
 
-ObjetoDeJogo::ObjetoDeJogo(int posicaoX, int posicaoY)
-{
-	setPosicaoX(posicaoX);
-	setPosicaoY(posicaoY);
-}
-
 ObjetoDeJogo::~ObjetoDeJogo()
 {
 }
