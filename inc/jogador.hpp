@@ -11,6 +11,7 @@ private:
 	bool vivo;
 	int pontos;
 	bool vitoria;
+	int vidas;
 
 
  public:
@@ -19,6 +20,8 @@ private:
 	~Jogador();
 	void setVivo(bool vivo);
 	bool getVivo();
+	void setVidas(int vidas);
+	int getVidas();
 	void setPontos(int pontos);
 	int getPontos();
 	void setVitoria(bool vitoria);

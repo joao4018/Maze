@@ -24,7 +24,9 @@ class Colisao {
       bool getIdentifica();
       void setIdentifica(bool identifica);
 
-      void Colisor(Jogador *jogador, Mapa *mapa);//, Inimigo *inimigo, Bonus *bonus);
+      void Colisor(Jogador *jogador, Mapa *mapa);
+      void ColisBon(Jogador *jogador,Mapa *mapa);
+      void Fim(Jogador *jogador, Mapa *mapa);
 
 
 };

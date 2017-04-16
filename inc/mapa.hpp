@@ -16,6 +16,8 @@ public:
 	void importaMapa();
 	char Detectora(int posy, int posx);
 	void addElemento(char forma,int posy,int posx);
+	void Constroi(char forma,int posy,int posx);
+
 
 };
 
