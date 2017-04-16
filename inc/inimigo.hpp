@@ -4,19 +4,19 @@
 #include "objetodejogo.hpp"
 #include <iostream>
 
-class Inimigo : public ObjetoDeJogo {
+class Inimigo : public ObjetoDeJogo
+{
 
-private:
-	int dano;
+	private:
+		int dano;
 
-public:
-	Inimigo();
-	Inimigo(int posicaoX,int posicaoY);
-	~Inimigo();
+	public:
+		Inimigo();
+		Inimigo(int posicaoX,int posicaoY);
+		~Inimigo();
+		void setDano(int dano);
+		int getDano();
 
-	void setDano(int dano);
-	int getDano();
 };
-
 
 #endif

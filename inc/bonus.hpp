@@ -3,19 +3,19 @@
 #include <iostream>
 #include "objetodejogo.hpp"
 
-class Bonus : public ObjetoDeJogo{
-private:
-	int pontos;
+class Bonus : public ObjetoDeJogo
+{
 
-public:
-	Bonus();
-	Bonus(int posicaoX, int posicaoY);
-	~Bonus();
-	
-	void setPontos(int pontos);
-	int getPontos();
+	private:
+		int pontos;
+
+	public:
+		Bonus();
+		Bonus(int posicaoX, int posicaoY);
+		~Bonus();
+		void setPontos(int pontos);
+		int getPontos();
+
 };
-
-
 
 #endif

@@ -2,17 +2,24 @@
 #include <iostream>
 
 using namespace std;
-Bonus::Bonus(){
+
+Bonus::Bonus()
+{
 	setTipo('*');
 }
-Bonus::Bonus(int posicaoX, int posicaoY){
+
+Bonus::Bonus(int posicaoX, int posicaoY)
+{
 	setPosicaoX(posicaoX);
 	setPosicaoY(posicaoY);
 }
 
-int Bonus::getPontos(){
+int Bonus::getPontos()
+{
 	return pontos;
 }
-void Bonus::setPontos(int pontos){
+
+void Bonus::setPontos(int pontos)
+{
 	this->pontos=pontos;
 }

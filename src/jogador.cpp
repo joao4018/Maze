@@ -4,7 +4,8 @@
 
 using namespace std;
 
-Jogador::Jogador(){
+Jogador::Jogador()
+{
 	setTipo('@');
 	setPosicaoX(3);
 	setPosicaoY(3);
@@ -14,54 +15,52 @@ Jogador::Jogador(){
 	setVidas(3);
 }
 
-Jogador::Jogador(int posicaoX,int posicaoY){
+Jogador::Jogador(int posicaoX,int posicaoY)
+{
 	setPosicaoX(posicaoX);
 	setPosicaoY(posicaoY);
 	setVivo(true);
 	setPontos(0);
 	setVitoria(false);
-       setTipo('@');
+  setTipo('@');
 }
-//Jogador::~Jogador(){}
 
-bool Jogador::getVivo(){
+bool Jogador::getVivo()
+{
 	return vivo;
 }
-void Jogador::setVivo(bool vivo){
+
+void Jogador::setVivo(bool vivo)
+{
 	this->vivo = vivo;
 }
-bool Jogador::getVitoria(){
+
+bool Jogador::getVitoria()
+{
 	return vitoria;
 }
-void Jogador::setVitoria(bool vitoria){
+
+void Jogador::setVitoria(bool vitoria)
+{
 	this->vitoria = vitoria;
 }
-int Jogador::getPontos(){
+
+int Jogador::getPontos()
+{
 	return pontos;
 }
-void Jogador::setPontos(int pontos){
+
+void Jogador::setPontos(int pontos)
+{
 	this->pontos += pontos;
 }
-int Jogador::getVidas(){
+
+int Jogador::getVidas()
+{
 	return vidas;
 }
-void Jogador::setVidas(int vidas){
+
+void Jogador::setVidas(int vidas)
+{
 	this->vidas += vidas;
 }
-/*void Jogador::movimento(){
-
-        char direcao = 'l';
-
-        direcao = getch();
-
-        if(direcao == 'w' && getPosicaoY() != '='){
-                this->setPosicaoY(-1);
-        } else if (direcao == 's' && getPosicaoY() != '='){
-                this->setPosicaoY(1);
-        } else if (direcao == 'a' && getPosicaoX() != '='){
-                this->setPosicaoX(-1);
-        } else if (direcao == 'd' && getPosicaoX()!= '='){
-                this->setPosicaoX(1);
-        }
-
-}*/
