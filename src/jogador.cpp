@@ -66,4 +66,21 @@ void Jogador::setVidas(int vidas)
 {
 	this->vidas += vidas;
 
-}
+}/*
+void Jogador::movimento(){
+
+        char direcao = 'l';
+
+        direcao = getch();
+
+        if(direcao == 'w'){
+                this->setPosicaoY(-1);
+        } else if (direcao == 's'){
+                this->setPosicaoY(1);
+        } else if (direcao == 'a'){
+                this->setPosicaoX(-1);
+        } else if (direcao == 'd'){
+                this->setPosicaoX(1);
+        }
+
+}*/

@@ -3,6 +3,7 @@
 #include <string>
 #include <ncurses.h>
 #include "desenhar.hpp"
+#include "mapa.hpp"
 #include "jogador.hpp"
 
 
@@ -17,9 +18,9 @@ void Desenhar::PrintaInicio()
 	}
 
 
-void Desenhar::PrintaComandos(Jogador *jogador)
+void Desenhar::PrintaComandos(Jogador *jogador,Mapa *mapa)
 {
-
+  mapa->PrintaMapa();
   printw("Comandos de Movimento:\n");
   printw("       -----                                Vidas: %d\n",jogador->getVidas());
   printw("       | W |                                Pontos: %d\n",jogador->getPontos());
@@ -27,23 +28,4 @@ void Desenhar::PrintaComandos(Jogador *jogador)
   printw("-----  -----  -----\n");
   printw("| A |  | S |  | D |\n");
   printw("-----  -----  -----\n");
-}
-
-void Desenhar::FimdeJogo()
-{
-  printw("---------------------------------------------------------------------------------------------------------------------------------\n");
-  printw("|   ___                   ___         _____            _________        ________________      ____________       ______         |\n");
-  printw("|  |   |                 |   |       /    \\          /        |       |                |   ||            |     |     \\        |\n");
-  printw("|  |   |                 |   |      /      \\        /   ______|       |________________|   ||   _________|     |      \\       |\n");
-  printw("|  |   |                 |   |     /   ___  \\      /   /                   ||    |         ||   |              |       \\      |\n");
-  printw("|  |   |                 |   |    /   /  \\  \\    /    |_____              ||    |         ||   |_____         |   _    \\     |\n");
-  printw("|  |   |      _____      |   |    |   |___|   |    |         \\             ||    |         ||         |        |  | \\    |    |\n");
-  printw("|  |   |     /    \\     |   |    |    ___    |    |________  \\            ||    |         ||    _____|        |  |  |    |    |\n");
-  printw("|  \\  \\   /   __ \\   /    /    |   /  \\   |        __  \\  \\           ||    |         ||   |              |  |__/    |    |\n");
-  printw("|   \\  \\_|   / \\  |_/    /     |   |   |   |       |  |  \\  \\          ||    |         ||   |              |         /     |\n");
-  printw("|    \\       /   \\       /      |   |   |   |       |  |___\\  \\         ||    |         ||   |________      |        /      |\n");
-  printw("|     \\     /     \\     /       |   |   |   |       |           \\        ||    |         ||            |     |       /       |\n");
-  printw("|      \\___/       \\___/        |___|   |___|       |____________\\       ||____|         ||____________|     |______/        |\n");
-  printw("|                                                                                                                               |\n");
-  printw("|_______________________________________________________________________________________________________________________________|\n");
 }

@@ -25,6 +25,7 @@ class Jogador : public ObjetoDeJogo
 		int getPontos();
 		void setVitoria(bool vitoria);
 		bool getVitoria();
+		void movimento();
 
 };
 

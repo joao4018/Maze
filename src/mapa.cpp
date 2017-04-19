@@ -12,7 +12,7 @@ Mapa::Mapa()
 
 void Mapa::importaMapa()
 {
-	ifstream mapas("mapa.txt");
+	ifstream mapas("doc//..//mapa.txt");
 	string auxiliar;
 	int i,j;
 
@@ -47,7 +47,7 @@ void Mapa::PrintaMapa()
 char Mapa::Detectora(int posy, int posx)
 {
 	char sprite;
-	sprite = this->local[posy][posx];
+	sprite = this->iniciamapa[posy][posx];
 	return sprite;
 }
 
@@ -59,4 +59,10 @@ void Mapa::addElemento(char forma, int posy, int posx)
 void Mapa::Constroi(char forma,int posy, int posx)
 {
 	this->iniciamapa[posy][posx] = forma;
+}
+char Mapa::Detect(int posy, int posx)
+{
+	char sprite;
+	sprite = this->local[posy][posx];
+	return sprite;
 }
