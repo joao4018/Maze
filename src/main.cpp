@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <ncurses.h>
+#include <fstream>
 #include <ctime>
 
 using namespace std;
@@ -16,6 +17,9 @@ int main(int argc, char ** argv){
 
 	int i[20],d[20],c,cont=0,by[5],hx[5],contador = 0;
 	char fase;
+
+	ofstream rank;
+	rank.open("doc//rank.txt",ios::app);
 
 	Jogador * jogador1 = new Jogador();
 	Mapa * lab = new Mapa();
@@ -29,12 +33,15 @@ int main(int argc, char ** argv){
 	labi->ImportaVitoria();
 	labi->ImportaInicio();
 
+
+
 	initscr();
 	clear();
 	labi->PrintaInicio();
 	fase = getch();
 	refresh();
 	endwin();
+
 
 	srand(time(NULL));
 
@@ -108,6 +115,9 @@ else
 	fase = getch();
 	refresh();
 	endwin();
-	return 0;
 }
+
+rank << jogador1->getPontos() << endl;
+rank.close();
+return 0;
 }
