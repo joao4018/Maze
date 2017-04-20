@@ -12,7 +12,7 @@ Mapa::Mapa()
 
 void Mapa::importaMapa()
 {
-	ifstream mapas("doc//..//mapa.txt");
+	ifstream mapas("doc//mapa.txt");
 	string auxiliar;
 	int i,j;
 
