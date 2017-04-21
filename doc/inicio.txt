@@ -1,13 +1,20 @@
 ********************************************************************************
 *                                                                              *
+*                                                                              *
+*                                                                              *
 *                  Bem vindo ao mais desafiador labirinto                      *
 *                           "Boca do Cogumelo"                                 *
 *                                                                              *
 ********************************************************************************
-*                Para uma melhor Jogabilidade MAXIMIZE A TELA                  *
+*                                                                              *
+*                                                                              *
 *______________________________________________________________________________*
 *                                                                              *
-*                 Escolha uma fase e que comece o desafio                      *
-*                      Facil = 0            Dificil = 1                        *
+*                    Escolha um nivel e que comece o desafio                   *
+*                                                                              *
+*                      Facil = 0                Dificil = 1                    *
+*                                                                              *
+*                                                                              *
+*                                                                              *
 *                                                                              *
 ********************************************************************************

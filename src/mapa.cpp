@@ -60,9 +60,3 @@ void Mapa::Constroi(char forma,int posy, int posx)
 {
 	this->iniciamapa[posy][posx] = forma;
 }
-char Mapa::Detect(int posy, int posx)
-{
-	char sprite;
-	sprite = this->local[posy][posx];
-	return sprite;
-}

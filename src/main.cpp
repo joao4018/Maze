@@ -5,6 +5,7 @@
 #include "inimigo.hpp"
 #include "bonus.hpp"
 #include "colisao.hpp"
+#include <string>
 #include <cstdlib>
 #include <iostream>
 #include <ncurses.h>
@@ -17,7 +18,7 @@ int main(int argc, char ** argv){
 
 	int i[20],d[20],c,cont=0,by[5],hx[5],contador = 0;
 	char fase;
-
+	string nome,vivo,pontuacoes;
 	ofstream rank;
 	rank.open("doc//rank.txt",ios::app);
 
@@ -33,6 +34,10 @@ int main(int argc, char ** argv){
 	labi->ImportaVitoria();
 	labi->ImportaInicio();
 
+	system("clear");
+	cout << "MAXIMIZE A TELA DO JOGO" << endl;
+	cout << "Escreva seu nome 'Mazer runner':" << endl;
+	getline (cin,nome);
 
 
 	initscr();
@@ -69,23 +74,20 @@ while(!jogador1->getVitoria() && !(jogador1->getVidas() == 0))
 
 	if(contador%10 == 0 && fase == '1')
 	{
-		for(c = 0;c < 20; c++)
+		for(c = 0;c < 2; c++)
 		{
 			d[c] = 1+(rand() % 18);
 			i[c] = 1+(rand() % 48);
 			lab->Constroi(inimigos[c]->getTipo(),d[c],i[c]);
+
 		}
-		for(cont = 0; cont < 5; cont++)
+		for(cont = 0; cont < 4; cont++)
 		{
 			by[cont] = 1+(rand() % 18);
 			hx[cont] = 1+(rand() % 48);
-			if(lab->Detectora(by[cont],hx[cont]) != '=')
-			{
-				lab->Constroi(bonus[cont]->getTipo(),by[cont],hx[cont]);
-	  	}
-		}
+			lab->Constroi(bonus[cont]->getTipo(),by[cont],hx[cont]);
 	}
-
+}
 	contador++;
 
 	lab->addElemento(jogador1->getTipo(),jogador1->getPosicaoY(),jogador1->getPosicaoX());
@@ -116,8 +118,31 @@ else
 	refresh();
 	endwin();
 }
+if(jogador1->getVitoria() == 1)
+{
+	vivo = "Sobrevivente";
+}
+else
+{
+	vivo = "Perdededor";
+}
 
-rank << jogador1->getPontos() << endl;
+rank << "Nome: "<< nome << " | Pontos: " << jogador1->getPontos() << " | Vidas restantes: "<< jogador1->getVidas() <<" | "<< vivo << " \n" << endl;
 rank.close();
+
+system("clear");
+ifstream in("doc//rank.txt");
+
+char ca = in.get();
+pontuacoes.push_back(ca);
+
+while(in.good())
+{
+	ca = in.get();
+	pontuacoes.push_back(ca);
+}
+
+cout << pontuacoes << endl;
+
 return 0;
 }

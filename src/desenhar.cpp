@@ -86,7 +86,6 @@ void Desenhar::PrintaInicio()
 			}
     }
   }
-
 }
 
 void Desenhar::PrintaVitoria()

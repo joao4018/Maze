@@ -21,7 +21,7 @@ class Mapa
 		void Constroi(char forma,int posy,int posx);
 		void setMapa(char forma,int posy,int posx);
 		void PrintaMapa();
-		char Detect(int posy, int posx);
+
 
 
 };
