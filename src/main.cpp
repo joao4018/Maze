@@ -14,7 +14,8 @@
 
 using namespace std;
 
-int main(int argc, char ** argv){
+int main(int argc, char ** argv)
+{
 
 	int i[20],d[20],c,cont=0,by[5],hx[5],contador = 0;
 	char fase;
@@ -36,11 +37,13 @@ int main(int argc, char ** argv){
 
 	system("clear");
 	cout << "MAXIMIZE A TELA DO JOGO" << endl;
-	cout << "Escreva seu nome 'Mazer runner':" << endl;
+	cout << "Escreva seu nome 'Maze runner':" << endl;
 	getline (cin,nome);
 
 
 	initscr();
+	start_color();
+	init_pair(2, COLOR_RED, COLOR_BLACK);
 	clear();
 	labi->PrintaInicio();
 	fase = getch();
@@ -67,82 +70,80 @@ int main(int argc, char ** argv){
 	}
 
 
-while(!jogador1->getVitoria() && !(jogador1->getVidas() == 0))
-{
-	initscr();
-  clear();
-
-	if(contador%10 == 0 && fase == '1')
+	while(!jogador1->getVitoria() && !(jogador1->getVidas() == 0))
 	{
-		for(c = 0;c < 2; c++)
+		initscr();
+  	clear();
+		if(contador%10 == 0 && fase == '1')
 		{
-			d[c] = 1+(rand() % 18);
-			i[c] = 1+(rand() % 48);
-			lab->Constroi(inimigos[c]->getTipo(),d[c],i[c]);
-
-		}
-		for(cont = 0; cont < 4; cont++)
-		{
+			for(c = 0;c < 2; c++)
+			{
+				d[c] = 1+(rand() % 18);
+				i[c] = 1+(rand() % 48);
+				lab->Constroi(inimigos[c]->getTipo(),d[c],i[c]);
+			}
+			for(cont = 0; cont < 4; cont++)
+			{
 			by[cont] = 1+(rand() % 18);
 			hx[cont] = 1+(rand() % 48);
 			lab->Constroi(bonus[cont]->getTipo(),by[cont],hx[cont]);
-	}
-}
-	contador++;
+		}
+	 }
+	 contador++;
 
-	lab->addElemento(jogador1->getTipo(),jogador1->getPosicaoY(),jogador1->getPosicaoX());
-  labi->PrintaComandos(jogador1,lab);
-	colisor->Colisor(jogador1,lab);
-	colisor->ColisBon(jogador1,lab);
-	colisor->Fim(jogador1,lab);
+	 lab->addElemento(jogador1->getTipo(),jogador1->getPosicaoY(),jogador1->getPosicaoX());
+   labi->PrintaComandos(jogador1,lab);
+	 colisor->Colisor(jogador1,lab);
+	 colisor->ColisBon(jogador1,lab);
+	 colisor->Fim(jogador1,lab);
 
-	refresh();
-  endwin();
-}
+	 refresh();
+   endwin();
+ }
 
-if(!(jogador1->getVidas() == 0))
-{
+ if(!(jogador1->getVidas() == 0))
+ {
 	initscr();
 	clear();
 	labi->PrintaVitoria();
 	fase = getch();
 	refresh();
 	endwin();
-}
-else
-{
+ }
+ else
+ {
 	initscr();
 	clear();
 	labi->PrintaDerrota();
 	fase = getch();
 	refresh();
 	endwin();
-}
-if(jogador1->getVitoria() == 1)
-{
-	vivo = "Sobrevivente";
-}
-else
-{
-	vivo = "Perdededor";
-}
+ }
+ if(jogador1->getVitoria() == 1)
+ {
+	 vivo = "Sobrevivente";
+ }
+ else
+ {
+  	vivo = "Perdededor";
+ }
 
-rank << "Nome: "<< nome << " | Pontos: " << jogador1->getPontos() << " | Vidas restantes: "<< jogador1->getVidas() <<" | "<< vivo << " \n" << endl;
-rank.close();
+ rank << "Nome: "<< nome << " | Pontos: " << jogador1->getPontos() << " | Vidas restantes: "<< jogador1->getVidas() <<" | "<< vivo  << endl;
+ rank.close();
 
-system("clear");
-ifstream in("doc//rank.txt");
+ system("clear");
+ ifstream in("doc//rank.txt");
 
-char ca = in.get();
-pontuacoes.push_back(ca);
+ char ca = in.get();
+ pontuacoes.push_back(ca);
 
-while(in.good())
-{
-	ca = in.get();
-	pontuacoes.push_back(ca);
-}
+ while(in.good())
+ {
+	 ca = in.get();
+	 pontuacoes.push_back(ca);
+ }
 
-cout << pontuacoes << endl;
+ cout << pontuacoes << endl;
 
-return 0;
+ return 0;
 }

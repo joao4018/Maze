@@ -1,9 +1,11 @@
 Nome: joao carlos | Pontos: 5| Vidas restantes: 0 | Perdededor
-
 Nome: Joao Carlos | Pontos: 145 | Vidas restantes: 2 | Sobrevivente
-
 Nome: asdasd | Pontos: 0 | Vidas restantes: 2 | Sobrevivente
-
 Nome: ddasd | Pontos: 2 | Vidas restantes: 0 | Perdededor
-
+Nome: asdas | Pontos: 0 | Vidas restantes: 0 | Perdededor
+Nome: Joao Carlos | Pontos: 2 | Vidas restantes: 0 | Perdededor
+Nome: joao carlos | Pontos: 0 | Vidas restantes: 0 | Perdededor
+Nome: asdas | Pontos: 10 | Vidas restantes: 1 | Sobrevivente
+Nome: asdsa | Pontos: 0 | Vidas restantes: 0 | Perdededor 
+Nome: Joao carlos | Pontos: 2 | Vidas restantes: 0 | Perdededor
 Nome: asdas | Pontos: 0 | Vidas restantes: 0 | Perdededor
